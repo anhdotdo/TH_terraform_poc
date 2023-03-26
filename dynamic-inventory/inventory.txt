@@ -1,0 +1,4 @@
+[servers] 
+Con_server ansible_host=18.198.51.164 ansible_user=ec2-user ansible_ssh_private_key_file=/home/anhdo/TH_terraform/dev-vpc_test/ssh-keys/anhdo-key
+Tar_server ansible_host=18.197.104.143 ansible_user=ec2-user ansible_ssh_private_key_file=/home/anhdo/TH_terraform/dev-vpc_test/ssh-keys/anhdo-key  
+jen_server ansible_host=52.59.204.240 ansible_user=ec2-user ansible_ssh_private_key_file=/home/anhdo/TH_terraform/dev-vpc_test/ssh-keys/anhdo-key

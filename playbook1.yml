@@ -1,0 +1,11 @@
+---
+- name: test playbook
+  hosts: webservers
+  vars:
+    var1: 'Hello!'
+    var2: 'Nice to see you again!'
+  tasks:
+    - name: test template
+      template:
+        src: /home/ec2-user/playbook_test1.txt
+        dest: /home/ec2-user/ANHDOFolder/playbook_test1.txt

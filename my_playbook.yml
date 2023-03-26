@@ -1,0 +1,39 @@
+--- 
+- name: install Tomcat server 
+  hosts: webservers 
+  tasks: 
+    - name: Update system 
+      yum: 
+        update_only: yes 
+        update_cache: yes 
+
+    - name: Install tomcat 
+      yum:  
+        name: "{{ item }}"  
+        state: present 
+      loop: 
+        - tomcat 
+        - tomcat-webapps 
+        - tomcat-admin-webapps 
+        - tomcat-docs-webapp 
+        - tomcat-javadoc 
+
+    - name: start tomcat.service 
+      service: 
+        name: tomcat 
+        state: started 
+
+    - name: enable startup tomcat.service 
+      service: 
+        name: tomcat 
+        enabled: yes 
+        
+    - name: set user/passwd to login tomcat
+      template:
+        src: user_password.xml
+        dest: /etc/tomcat/tomcat-users.xml
+
+    - name: restart tomcat 
+      service: 
+        name: tomcat 
+        state: restarted 

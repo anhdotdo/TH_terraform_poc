@@ -1,0 +1,8 @@
+---
+- name: Ping them all 
+  hosts: all
+  vars:
+    ansible_ssh_private_key_file: "/home/anhdo/TH_terraform/dev-vpc_test/ssh-keys/anhdo-key"
+  tasks:
+    - name: pinging
+      ping:
